@@ -3,6 +3,7 @@ import 'package:food_delivery/pages/home.dart';
 import 'package:food_delivery/pages/order.dart';
 import 'package:food_delivery/pages/profile.dart';
 import 'package:food_delivery/pages/wallet.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -34,17 +35,35 @@ class _BottomNavState extends State<BottomNav> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: <Widget>[
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
-        ],
-        onTap: (index) {
-          //Handle button tap
+        height: 65,
+        backgroundColor: Colors.white,
+        color: Colors.black,
+        animationDuration: Duration(milliseconds: 250),
+        onTap: (int index) {
+          setState(() {
+            currentTabIndex = index;
+          });
         },
+        items: const [
+          Icon(
+            Icons.home_outlined,
+            color: Colors.white,
+          ), // Icon
+          Icon(
+            Icons.shopping_bag_outlined,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.wallet_outlined,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.person_outline,
+            color: Colors.white,
+          ),
+        ],
       ),
-      body: Container(color: Colors.blueAccent),
+      body: pages[currentTabIndex],
     );
   }
 }

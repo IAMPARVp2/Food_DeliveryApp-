@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/details.dart';
 import 'package:food_delivery/widgets/widget_support.dart';
 
 class home extends StatefulWidget {
@@ -56,35 +57,41 @@ class _homeState extends State<home> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Container(
-                    margin: EdgeInsets.all(4),
-                    child: Material(
-                      elevation: 5.0,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(14),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "images/salad2.png",
-                              height: 150,
-                              width: 150,
-                              fit: BoxFit.cover,
-                            ),
-                            Text("Veggies Taco Hash",
-                                style: AppWidget.SemiBoldTextFeildStyle()),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text("Fresh and Healthy",
-                                style: AppWidget.LightTextFeildStyle()),
-                            SizedBox(
-                              height: 5.0,
-                            ),
-                            Text("\$25",
-                                style: AppWidget.SemiBoldTextFeildStyle()),
-                          ],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Details()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      child: Material(
+                        elevation: 5.0,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                "images/salad2.png",
+                                height: 150,
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                              Text("Veggies Taco Hash",
+                                  style: AppWidget.SemiBoldTextFeildStyle()),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text("Fresh and Healthy",
+                                  style: AppWidget.LightTextFeildStyle()),
+                              SizedBox(
+                                height: 5.0,
+                              ),
+                              Text("\$25",
+                                  style: AppWidget.SemiBoldTextFeildStyle()),
+                            ],
+                          ),
                         ),
                       ),
                     ),
