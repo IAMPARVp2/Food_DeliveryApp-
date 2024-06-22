@@ -62,10 +62,10 @@ class _HomeState extends State<Home> {
                 child: Row(
                   children: [
                     buildFoodItem("Veggies Taco Hash", "Fresh and Healthy",
-                        "\$25", "images/salad2.png"),
+                        "\$25", "assets/images/salad2.png"),
                     SizedBox(width: 15.0),
                     buildFoodItem("Mix Veg Salad", "Spicy with the onion",
-                        "\$25", "images/salad2.png"),
+                        "\$25", "assets/images/salad2.png"),
                   ],
                 ),
               ),
@@ -77,14 +77,17 @@ class _HomeState extends State<Home> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      buildFoodDetails("Mild spiced salad",
-                          "Honey cheese sandwich", "\$10", "images/salad2.png"),
+                      buildFoodDetails(
+                          "Mild spiced salad",
+                          "Honey cheese sandwich",
+                          "\$10",
+                          "assets/images/salad2.png"),
                       SizedBox(height: 20.0),
                       buildFoodDetails("Classic Burger", "With cheddar cheese",
-                          "\$15", "images/salad2.png"),
+                          "\$15", "assets/images/salad2.png"),
                       SizedBox(height: 20.0),
                       buildFoodDetails("Fruit Salad", "Fresh mixed fruits",
-                          "\$12", "images/salad2.png"),
+                          "\$12", "assets/images/salad2.png"),
                     ],
                   ),
                 ),
@@ -100,7 +103,7 @@ class _HomeState extends State<Home> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        buildCategoryItem("images/pizza.png", pizza, () {
+        buildCategoryItem("assets/images/pizza.png", pizza, () {
           setState(() {
             pizza = true;
             icecream = false;
@@ -108,7 +111,7 @@ class _HomeState extends State<Home> {
             salad = false;
           });
         }),
-        buildCategoryItem("images/icecream.png", icecream, () {
+        buildCategoryItem("assets/images/icecream.png", icecream, () {
           setState(() {
             pizza = false;
             icecream = true;
@@ -116,7 +119,7 @@ class _HomeState extends State<Home> {
             salad = false;
           });
         }),
-        buildCategoryItem("images/burger.png", burger, () {
+        buildCategoryItem("assets/images/burger.png", burger, () {
           setState(() {
             pizza = false;
             icecream = false;
@@ -124,7 +127,7 @@ class _HomeState extends State<Home> {
             salad = false;
           });
         }),
-        buildCategoryItem("images/salad.png", salad, () {
+        buildCategoryItem("assets/images/salad.png", salad, () {
           setState(() {
             pizza = false;
             icecream = false;

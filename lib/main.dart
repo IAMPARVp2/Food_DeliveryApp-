@@ -4,7 +4,14 @@ import 'package:food_delivery/pages/onboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      options: const FirebaseOptions(
+    apiKey: 'AIzaSyDmJHqV66uV_pRdlyGeceyOKEK8F-1R7uw',
+    appId: '1:222662455007:android:f3a321813d2a7e39f3836a',
+    messagingSenderId: '',
+    projectId: 'fooddelivery-712b1',
+    storageBucket: 'fooddelivery-712b1.appspot.com',
+  ));
   runApp(const MyApp());
 }
 

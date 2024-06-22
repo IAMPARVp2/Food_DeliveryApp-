@@ -190,7 +190,7 @@ class _DetailsState extends State<Details> {
             Center(
               child: ClipOval(
                 child: Image.asset(
-                  "images/salad2.png",
+                  "assets/images/salad2.png",
                   width: MediaQuery.of(context).size.width / 1.2,
                   height: MediaQuery.of(context).size.width / 1.2,
                   fit: BoxFit.cover,
